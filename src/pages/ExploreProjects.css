@@ -1,0 +1,112 @@
+
+.explore-projects {
+  width: 100%;
+  padding: 110px 7%;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.explore-projects-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.explore-projects-eyebrow {
+  margin: 0 0 24px;
+  color: var(--color-muted);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.explore-projects-link-wrap {
+  width: 100%;
+}
+
+.explore-projects-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 15vw, 13rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.09em;
+  transition: color 0.35s ease;
+}
+
+.explore-projects-link > span:first-child {
+  transition:
+    color 0.35s ease,
+    transform 0.45s ease;
+}
+
+.explore-projects-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: clamp(48px, 7vw, 88px);
+  height: clamp(48px, 7vw, 88px);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-accent);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.45s ease;
+}
+
+.explore-projects-link:hover > span:first-child {
+  color: var(--color-accent);
+  transform: translateX(12px);
+}
+
+.explore-projects-link:hover .explore-projects-icon {
+  color: #fff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .explore-projects {
+    padding: 85px 6%;
+  }
+
+  .explore-projects-eyebrow {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .explore-projects-link {
+    font-size: clamp(3.5rem, 15vw, 7rem);
+  }
+
+  .explore-projects-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .explore-projects-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+@media (max-width: 420px) {
+  .explore-projects-link {
+    font-size: 15vw;
+    letter-spacing: -0.08em;
+  }
+
+  .explore-projects-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

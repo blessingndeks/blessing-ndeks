@@ -1,0 +1,325 @@
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  width: 100%;
+  height: 82px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.header-container {
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========================================
+   LOGO
+======================================== */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-heading);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--color-text);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.logo-highlight {
+  color: var(--color-accent-light);
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: var(--color-text);
+}
+
+/* SLIDING ACTIVE UNDERLINE */
+
+.nav-active-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 2px;
+  display: block;
+  border-radius: 10px;
+  background: var(--color-accent);
+}
+
+/* HOVER UNDERLINE */
+
+.header-nav a:not(.active)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header-nav a:not(.active):hover::after {
+  transform: scaleX(1);
+}
+
+/* ========================================
+   HEADER ACTIONS
+======================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* THEME SWITCH */
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--color-surface-light);
+  transform: rotate(15deg);
+}
+
+/* DOWNLOAD CV BUTTON */
+
+.header-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.header-download:hover {
+  background: var(--color-surface-light);
+  border-color: var(--color-muted);
+  transform: translateY(-2px);
+}
+
+/* HIRE ME BUTTON */
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.header-cta:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* ========================================
+   TABLET AND MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 76px;
+  }
+
+  .header-container {
+    width: calc(100% - 32px);
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    padding: 25px 24px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-nav.nav-open {
+    display: flex;
+  }
+
+  .header-nav a {
+    font-size: 15px;
+  }
+
+  .header-nav a::after,
+  .nav-active-indicator {
+    bottom: 2px;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    margin-right: 18px;
+    gap: 12px;
+  }
+
+  .header-download {
+    display: none;
+  }
+
+  .header-cta {
+    padding: 10px 14px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE SCREENS
+======================================== */
+
+@media (max-width: 380px) {
+  .header-container {
+    width: calc(100% - 24px);
+  }
+
+  .header-logo {
+    font-size: 19px;
+  }
+
+  .header-actions {
+    gap: 8px;
+    margin-right: 12px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-cta {
+    font-size: 12px;
+    padding: 9px 11px;
+  }
+}
+
+/* ========================================
+   HERO IMAGE DECORATION
+======================================== */
+
+.hero-image-decoration {
+  display: none;
+}
+
+.hero-image-frame {
+  border: none;
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav a,
+  .header-nav a::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,250 @@
+.services-section {
+  padding: 130px 6%;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-heading {
+  max-width: 850px;
+  margin-bottom: 90px;
+}
+
+.services-eyebrow,
+.service-number,
+.service-offerings-label,
+.service-bottom > span {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.services-heading h2 {
+  margin: 28px 0;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.services-heading h2 span {
+  color: var(--color-accent);
+}
+
+.services-heading > p {
+  max-width: 540px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.services-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.service-item {
+  padding: 35px 0 30px;
+  border-bottom: 1px solid var(--color-border);
+  transition: padding 0.35s ease;
+}
+
+.service-item:hover {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.service-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-accent);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.service-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.service-main h3 {
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.service-main p {
+  max-width: 570px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.service-offerings-label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.service-offerings ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-offerings li {
+  position: relative;
+  padding-left: 17px;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.service-offerings li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.service-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.service-bottom a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: transform 0.3s ease, background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-bottom a:hover {
+  transform: rotate(45deg);
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .services-section {
+    padding: 100px 5%;
+  }
+
+  .services-heading {
+    margin-bottom: 65px;
+  }
+
+  .service-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .service-offerings ul {
+    max-width: 650px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .services-section {
+    padding: 80px 6%;
+  }
+
+  .services-heading {
+    margin-bottom: 50px;
+  }
+
+  .services-heading h2 {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+    margin: 22px 0;
+  }
+
+  .services-heading > p {
+    font-size: 14px;
+  }
+
+  .service-item {
+    padding: 28px 0;
+  }
+
+  .service-item:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .service-topline {
+    margin-bottom: 25px;
+  }
+
+  .service-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-main h3 {
+    font-size: 2.2rem;
+  }
+
+  .service-main p {
+    font-size: 14px;
+  }
+
+  .service-offerings ul {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-bottom {
+    margin-top: 30px;
+  }
+
+  .service-bottom > span {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-item,
+  .service-icon,
+  .service-bottom a {
+    transition: none;
+  }
+}

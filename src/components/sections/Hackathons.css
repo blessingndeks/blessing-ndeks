@@ -1,0 +1,233 @@
+
+.hackathons-section {
+  padding: 130px 6%;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.hackathons-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hackathons-heading {
+  max-width: 850px;
+  margin-bottom: 85px;
+}
+
+.hackathons-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+
+.hackathons-heading h2 {
+  margin: 28px 0;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.hackathons-heading h2 span {
+  color: var(--color-accent);
+}
+
+.hackathons-heading > p {
+  max-width: 540px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hackathons-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.hackathon-card {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 150px 40px;
+  gap: 25px;
+  align-items: center;
+  padding: 45px 10px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.35s ease, padding 0.35s ease;
+}
+
+.hackathon-card:hover {
+  padding-left: 22px;
+  padding-right: 22px;
+  background: var(--color-surface, transparent);
+}
+
+.hackathon-number {
+  align-self: start;
+  padding-top: 5px;
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.hackathon-main {
+  min-width: 0;
+}
+
+.hackathon-category {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hackathon-main h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.hackathon-main h4 {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.hackathon-main p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.hackathon-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.hackathon-tags span {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  color: var(--color-muted);
+  font-size: 10px;
+}
+
+.hackathon-recognition {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-muted);
+}
+
+.hackathon-recognition span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hackathon-recognition.is-award {
+  color: var(--color-accent);
+}
+
+.hackathon-arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.hackathon-card:hover .hackathon-arrow {
+  transform: rotate(45deg);
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hackathons-section {
+    padding: 100px 5%;
+  }
+
+  .hackathons-heading {
+    margin-bottom: 60px;
+  }
+
+  .hackathon-card {
+    grid-template-columns: 45px minmax(0, 1fr) 120px 35px;
+    gap: 16px;
+    padding: 35px 5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hackathons-section {
+    padding: 80px 6%;
+  }
+
+  .hackathons-heading {
+    margin-bottom: 45px;
+  }
+
+  .hackathons-heading h2 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+
+  .hackathons-heading > p {
+    font-size: 14px;
+  }
+
+  .hackathon-card {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 30px 0;
+  }
+
+  .hackathon-card:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hackathon-number {
+    grid-row: 1 / 4;
+  }
+
+  .hackathon-main h3 {
+    font-size: 1.9rem;
+  }
+
+  .hackathon-main p {
+    font-size: 13px;
+  }
+
+  .hackathon-recognition {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .hackathon-arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hackathon-card,
+  .hackathon-arrow {
+    transition: none;
+  }
+}

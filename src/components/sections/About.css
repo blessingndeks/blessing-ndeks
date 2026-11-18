@@ -1,0 +1,375 @@
+
+.about-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.about-container {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.about-intro {
+  max-width: 680px;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.about-headline {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 5.4vw, 5.3rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.about-headline span {
+  display: block;
+  color: var(--color-muted);
+}
+
+.about-role {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.about-role-label {
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.about-role-slider {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  overflow: visible;
+  white-space: nowrap;
+  color: #8b2635;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #8b2635;
+  font-weight: 400;
+  animation: typing-blink 0.75s step-end infinite;
+}
+
+@keyframes typing-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.about-description {
+  max-width: 570px;
+  margin: 24px 0 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.about-button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 19px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-3px);
+}
+
+.about-button-primary {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.about-button-primary:hover {
+  border-color: var(--color-accent-light);
+  background: var(--color-accent-light);
+}
+
+.about-button-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.about-button-text {
+  padding: 0 8px;
+  border-color: transparent;
+  color: var(--color-muted);
+}
+
+.about-button-text:hover {
+  color: var(--color-accent);
+}
+
+.about-visual {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+  padding: 0 0 55px;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.88;
+  overflow: hidden;
+  border-radius: 220px 220px 8px 8px;
+  background: var(--color-border);
+}
+
+.about-portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.7s ease;
+}
+
+.about-image-wrapper:hover .about-portrait {
+  transform: scale(1.04);
+}
+
+.about-profile-card {
+  position: absolute;
+  bottom: 20px;
+  left: -55px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 250px;
+  padding: 18px 22px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  box-shadow: 0 15px 45px rgb(0 0 0 / 12%);
+}
+
+.about-profile-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.about-profile-card div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-profile-card span {
+  color: var(--color-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about-profile-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-profile-card a:hover {
+  color: var(--color-accent);
+}
+
+.about-image-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--color-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 45px;
+  }
+
+  .about-headline {
+    font-size: clamp(2.7rem, 6vw, 4.2rem);
+  }
+
+  .about-profile-card {
+    left: -25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 680px) {
+  .about-section {
+    padding: 85px 0;
+  }
+
+  .about-container {
+    width: min(100% - 40px, 520px);
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-eyebrow {
+    margin-bottom: 22px;
+    font-size: 0.65rem;
+  }
+
+  .about-headline {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+    line-height: 1.08;
+  }
+
+  .about-role {
+    margin-top: 25px;
+  }
+
+  .about-role-slider {
+    font-size: 1rem;
+  }
+
+  .about-description {
+    margin-top: 20px;
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+
+  .about-actions {
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .about-button {
+    min-height: 45px;
+    padding: 0 14px;
+    font-size: 0.8rem;
+  }
+
+  .about-button-text {
+    padding: 0 5px;
+  }
+
+  .about-visual {
+    width: min(100%, 390px);
+    justify-self: center;
+    padding-bottom: 55px;
+  }
+
+  .about-profile-card {
+    left: -8px;
+    min-width: 230px;
+    padding: 15px 17px;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 380px) {
+  .about-container {
+    width: calc(100% - 32px);
+  }
+
+  .about-actions {
+    gap: 8px;
+  }
+
+  .about-button {
+    padding: 0 11px;
+    font-size: 0.75rem;
+  }
+
+  .about-profile-card {
+    left: 0;
+  }
+
+  .about-role {
+    gap: 8px;
+  }
+
+  .about-role-label,
+  .about-role-slider {
+    font-size: 0.9rem;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-button,
+  .about-portrait,
+  .typing-cursor {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Force the typewriter text and cursor to remain burgundy */
+.about-role-slider,
+.about-role-slider span,
+.about-role-slider .typing-cursor {
+  color: #8b2635 !important;
+}

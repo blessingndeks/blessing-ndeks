@@ -1,0 +1,600 @@
+
+/* =========================================
+   PROJECTS PAGE
+========================================= */
+
+.projects-page {
+  min-height: 100vh;
+  padding-top: 90px;
+  padding-bottom: 120px;
+  overflow: hidden;
+}
+
+.projects-page-container {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.projects-page-hero {
+  padding: 100px 0 75px;
+  text-align: center;
+}
+
+.projects-page-hero h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 17vw, 13rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.075em;
+  transform: scaleY(1.08);
+}
+
+.projects-page-hero p {
+  max-width: 520px;
+  margin: 38px auto 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.projects-page-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 85px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.projects-page-meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.projects-page-meta a:hover {
+  color: var(--color-accent);
+}
+
+.projects-page-meta > span {
+  color: var(--color-text);
+}
+
+.projects-count-label {
+  color: var(--color-muted);
+}
+
+/* =========================================
+   PROJECT GALLERY
+========================================= */
+
+.projects-gallery-section {
+  padding: 35px 0 80px;
+}
+
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 65px;
+  row-gap: 100px;
+  align-items: start;
+}
+
+.gallery-project {
+  min-width: 0;
+}
+
+.gallery-project:nth-child(even) {
+  margin-top: 145px;
+}
+
+.gallery-project:nth-child(odd) {
+  margin-top: 0;
+}
+
+.gallery-project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   PROJECT PREVIEW
+========================================= */
+
+.gallery-project-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 370px;
+  aspect-ratio: 1.08 / 1;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  isolation: isolate;
+  transition:
+    transform 0.5s ease,
+    border-color 0.4s ease;
+}
+
+.gallery-project-link:hover .gallery-project-preview {
+  transform: translateY(-7px);
+  border-color: rgba(70, 130, 255, 0.5);
+}
+
+.gallery-project-preview::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  opacity: 0.5;
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(255, 255, 255, 0.17),
+      transparent 45%
+    );
+}
+
+.gallery-project-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-project-labels span {
+  max-width: 65%;
+  padding: 8px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  font-size: 0.61rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   PROJECT ARTWORK
+========================================= */
+
+.gallery-project-artwork {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.6s ease;
+}
+
+.gallery-project-link:hover .gallery-project-artwork {
+  transform: scale(1.04);
+}
+
+.gallery-project-artwork-name {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.gallery-project-artwork-tagline {
+  max-width: 300px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* Individual project preview colours */
+
+.gallery-project-scoot .gallery-project-preview {
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(105, 130, 165, 0.5),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #252b35, #111820);
+}
+
+.gallery-project-herly .gallery-project-preview {
+  background:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.45),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #a991c0, #59446f);
+}
+
+.gallery-project-herly .gallery-project-artwork-name {
+  color: #ffffff;
+}
+
+.gallery-project-xevrali .gallery-project-preview {
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(255, 255, 255, 0.4),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #91aa98, #344b3b);
+}
+
+.gallery-project-cart-whapp .gallery-project-preview {
+  background:
+    radial-gradient(
+      circle at 25% 20%,
+      rgba(255, 255, 255, 0.5),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #bd9f7b, #584433);
+}
+
+/* =========================================
+   VIEW BUTTON
+========================================= */
+
+.gallery-project-view {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #3978f6;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translate(-50%, -35%) scale(0.7);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.gallery-project-link:hover .gallery-project-view {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+.gallery-project-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 2px 0;
+}
+
+.gallery-project-information > div {
+  min-width: 0;
+}
+
+.gallery-project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.gallery-project-technologies span {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.gallery-project-technologies span:not(:last-child)::after {
+  content: "·";
+  margin-left: 7px;
+}
+
+.gallery-project-information h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.gallery-project-link:hover .gallery-project-information h2 {
+  color: #3978f6;
+}
+
+.gallery-project-information p {
+  max-width: 440px;
+  margin: 13px 0 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.75;
+}
+
+.gallery-project-arrow {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.gallery-project-link:hover .gallery-project-arrow {
+  background: #3978f6;
+  color: #ffffff;
+  border-color: #3978f6;
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   TABLET AND MOBILE: 960PX AND BELOW
+========================================= */
+
+@media (max-width: 960px) {
+  .projects-page-container {
+    width: calc(100% - 48px);
+  }
+
+  /* Switch from two columns to one column */
+  .projects-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+  }
+
+  .gallery-project,
+  .gallery-project:nth-child(even),
+  .gallery-project:nth-child(odd) {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* Wide project previews */
+  .gallery-project-preview {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 1.6 / 1;
+    padding: 20px;
+  }
+
+  .gallery-project-artwork-name {
+    font-size: clamp(3.5rem, 10vw, 7rem);
+  }
+
+  .gallery-project-information {
+    align-items: center;
+  }
+
+  .gallery-project-information p {
+    max-width: 650px;
+  }
+
+  /* Make VIEW visible on touch devices */
+  .gallery-project-view {
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    left: auto;
+    width: 75px;
+    height: 75px;
+    gap: 5px;
+    font-size: 0.65rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  .gallery-project-view svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .projects-page {
+    padding-top: 75px;
+    padding-bottom: 70px;
+  }
+
+  .projects-page-container {
+    width: calc(100% - 36px);
+  }
+
+  .projects-page-hero {
+    padding: 90px 0 45px;
+  }
+
+  .projects-page-hero h1 {
+    font-size: clamp(4rem, 19vw, 7rem);
+  }
+
+  .projects-page-hero p {
+    max-width: 400px;
+    margin-top: 25px;
+    font-size: 0.88rem;
+  }
+
+  .projects-page-meta {
+    margin-top: 60px;
+    font-size: 0.62rem;
+  }
+
+  .projects-gallery-section {
+    padding-top: 25px;
+  }
+
+  .projects-gallery {
+    gap: 65px;
+  }
+
+  .gallery-project-preview {
+    aspect-ratio: 1.3 / 1;
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .gallery-project-labels {
+    gap: 8px;
+  }
+
+  .gallery-project-labels span {
+    max-width: 60%;
+    padding: 7px 10px;
+    font-size: 0.55rem;
+  }
+
+  .gallery-project-artwork {
+    padding: 20px;
+  }
+
+  .gallery-project-artwork-name {
+    font-size: clamp(2.7rem, 12vw, 5rem);
+  }
+
+  .gallery-project-artwork-tagline {
+    max-width: 260px;
+    margin-top: 13px;
+    font-size: 0.78rem;
+  }
+
+  .gallery-project-view {
+    right: 14px;
+    bottom: 14px;
+    width: 62px;
+    height: 62px;
+    font-size: 0.58rem;
+  }
+
+  .gallery-project-view svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .gallery-project-information {
+    gap: 12px;
+    padding: 20px 2px 0;
+  }
+
+  .gallery-project-information > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .gallery-project-technologies {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .gallery-project-technologies span {
+    font-size: 0.65rem;
+  }
+
+  .gallery-project-technologies span:not(:last-child)::after {
+    margin-left: 6px;
+  }
+
+  .gallery-project-information h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .gallery-project-information p {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  .gallery-project-arrow {
+    width: 43px;
+    height: 43px;
+  }
+
+  .gallery-project-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .projects-page-container {
+    width: calc(100% - 32px);
+  }
+
+  .gallery-project-preview {
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .gallery-project-information h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-project-arrow {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-project-preview,
+  .gallery-project-artwork,
+  .gallery-project-view,
+  .gallery-project-arrow,
+  .gallery-project-information h2 {
+    transition: none;
+  }
+}
